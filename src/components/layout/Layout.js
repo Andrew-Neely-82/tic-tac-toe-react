@@ -1,5 +1,5 @@
+import { updateScores, winnerCheck, resetTheBoard, playerSwitch } from "./index";
 import { Board, ResetButton, ScoreBoard } from "../export";
-import { WIN_CONDITIONS } from "./index";
 import { useState } from "react";
 
 const Layout = () => {
@@ -18,50 +18,22 @@ const Layout = () => {
     });
 
     const winner = checkWinner(updatedBoard);
-
-    if (winner) {
-      if (winner === "O") {
-        let { oScore } = scores;
-        oScore += 1;
-        setScores({ ...scores, oScore });
-      } else {
-        let { xScore } = scores;
-        xScore += 1;
-        setScores({ ...scores, xScore });
-      }
-    }
-
+    updateScores(winner, scores, setScores);
     setBoard(updatedBoard);
     setXPlaying(!xPlaying);
   };
 
-  const checkWinner = (board) => {
-    for (let i = 0; i < WIN_CONDITIONS.length; i++) {
-      const [x, y, z] = WIN_CONDITIONS[i];
-
-      if (board[x] && board[x] === board[y] && board[y] === board[z]) {
-        setGameOver(true);
-        return board[x];
-      }
-    }
-  };
-
-  const resetBoard = () => {
-    setGameOver(false);
-    setBoard(Array(9).fill(null));
-  };
-
-  const scoreProps = {
-    scores: scores,
-    xPlaying: xPlaying,
-  };
+  const checkWinner = winnerCheck(setGameOver);
+  const resetBoard = resetTheBoard(setGameOver, setBoard);
+  const switchPlayer = playerSwitch(xPlaying, setXPlaying);
 
   return (
     <>
-      <ScoreBoard {...scoreProps} />
+      <ScoreBoard scores={scores} xPlaying={xPlaying} onClick={switchPlayer} />
       <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
       <ResetButton resetBoard={resetBoard} />
     </>
   );
 };
+
 export default Layout;
