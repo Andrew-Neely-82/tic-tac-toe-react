@@ -1,0 +1,32 @@
+#modal-modal-title {
+  text-decoration: underline;
+}
+
+.close {
+  position: absolute !important;
+  top: 0;
+  right: 01rem;
+  padding-block: 0.25rem !important;
+  padding-inline: 0.75rem !important;
+  min-width: fit-content !important;
+  background: red !important;
+}
+
+.underline {
+  text-decoration: underline;
+  font-size: 1.125rem;
+}
+
+.MuiModal-root {
+  @media (max-width: 280px) {
+    width: 100vw !important;
+    padding-inline: 0 !important;
+    margin-inline: auto !important;
+  }
+}
+
+.css-1ibbdop {
+  @media (max-width: 280px) {
+    width: 100% !important;
+  }
+}

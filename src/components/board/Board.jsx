@@ -6,6 +6,7 @@ const Board = ({ board, onClick }) => {
     <div className="Board__">
       {board.map((value, index) => {
         const props = {
+          key: index,
           value: value,
           onClick: () => value === null && onClick(index),
         };
@@ -15,4 +16,5 @@ const Board = ({ board, onClick }) => {
     </div>
   );
 };
+
 export default Board;

@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 20rem;
+    max-width: 20rem;
     background: white;
     border-radius: 0.5rem !important;
     box-shadow: 0 0 8px #888;
@@ -39,7 +39,7 @@
       &-o {
         font-size: 1rem !important;
         font-weight: bold !important;
-        font-family: "Fredoka", sans-serif;
+        font-family: "Poppins", sans-serif;
         cursor: pointer;
 
         &:hover {
