@@ -8,6 +8,6 @@ const Box = ({ value, onClick }) => {
     onClick: onClick,
   };
 
-  return <button {...props}>X</button>;
+  return <button {...props}>{value}</button>;
 };
 export default Box;

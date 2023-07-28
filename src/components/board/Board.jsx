@@ -1,5 +1,5 @@
 import { Box } from "../export";
-import './style.scss'
+import "./style.scss";
 
 const Board = ({ board, onClick }) => {
   return (
@@ -7,7 +7,7 @@ const Board = ({ board, onClick }) => {
       {board.map((value, index) => {
         const props = {
           value: value,
-          onClick: () => onClick(index),
+          onClick: () => value === null && onClick(index),
         };
 
         return <Box {...props} />;
