@@ -1,3 +1,4 @@
+import Button from "@mui/material/Button";
 import "./style.scss";
 
 const Box = ({ value, onClick }) => {
@@ -5,9 +6,10 @@ const Box = ({ value, onClick }) => {
 
   const props = {
     className: style,
+    variant: "contained",
     onClick: onClick,
   };
 
-  return <button {...props}>{value}</button>;
+  return <Button {...props}>{value}</Button>;
 };
 export default Box;
