@@ -1,10 +1,13 @@
-import './style.scss'
+import Button from "@mui/material/Button";
+
+import "./style.scss";
 
 const ResetButton = ({ resetBoard }) => {
   const props = {
     className: "ResetButton__",
+    variant: "contained",
     onClick: resetBoard,
   };
-  return <button {...props}>Reset</button>;
+  return <Button {...props}>Reset</Button>;
 };
 export default ResetButton;

@@ -1,42 +1,50 @@
 .ScoreBoard__ {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 20rem;
-  background: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 8px #888;
-  margin: 3rem auto;
+  margin: auto;
 
-  .inactive {
-    border-bottom: 5px solid transparent !important;
-  }
+  .ScoreBoard__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20rem;
+    background: white;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 0 8px #888;
+    margin-block: 3rem !important;
+    margin-inline: auto !important;
 
-  .score {
-    width: 100%;
-    text-align: center;
-    padding: 1rem 0;
-
-    &-x {
-      color: rgb(255 70 37);
-      border-bottom: 5px solid rgb(255 70 37);
-      border-radius: 0.5rem 0 0 0.5rem;
+    .inactive {
+      border-bottom: 5px solid transparent !important;
     }
 
-    &-o {
-      color: rgb(44 135 255);
-      border-bottom: 5px solid rgb(44 135 255);
-      border-radius: 0 0.5rem 0.5rem 0;
-    }
+    .score {
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
 
-    &-x,
-    &-o {
-      cursor: pointer;
+      &-x {
+        color: rgb(255 70 37);
+        border: none;
+        border-bottom: 5px solid rgb(255 70 37);
+        border-radius: 0.5rem 0 0 0.5rem;
+      }
 
-      &:hover {
-        background: #efefef;
+      &-o {
+        color: rgb(44 135 255);
+        border: none;
+        border-bottom: 5px solid rgb(44 135 255);
+        border-radius: 0 0.5rem 0.5rem 0;
+      }
+
+      &-x,
+      &-o {
+        font-size: 1rem !important;
+        font-weight: bold !important;
+        font-family: "Fredoka", sans-serif;
+        cursor: pointer;
+
+        &:hover {
+          background: #efefef;
+        }
       }
     }
   }
