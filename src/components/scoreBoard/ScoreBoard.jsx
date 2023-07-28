@@ -7,7 +7,7 @@ const ScoreBoard = ({ scores, xPlaying, onClick }) => {
 
   return (
     <div className="ScoreBoard__">
-      <ButtonGroup className="ScoreBoard__group">
+      <ButtonGroup className="ScoreBoard__group shadow">
         <Button className={`score score-x ${!xPlaying && "inactive"}`} onClick={onClick}>
           X - {xScore}
         </Button>

@@ -1,3 +1,4 @@
+import { backgroundChange, darkModeClasses } from "./index";
 import { Box, Button, Typography } from "@mui/material";
 import { forwardRef, useEffect, useState } from "react";
 import DarkModeToggle from "./DarkModeToggle";
@@ -14,13 +15,14 @@ const SettingsModalBox = forwardRef(({ onClick }, ref) => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
 
     // Update the body class based on the darkMode value
-    if (darkMode) {
-      document.body.classList.add("bg-dark");
-      document.body.classList.remove("bg-light");
-    } else {
-      document.body.classList.add("bg-light");
-      document.body.classList.remove("bg-dark");
-    }
+    backgroundChange(darkMode);
+
+    // Apply the "box" class directly to all elements with the "box" class
+    const boxElements = document.querySelectorAll(".box");
+    const scoreElements = document.querySelectorAll(".score");
+    const shadowElements = document.querySelectorAll(".ScoreBoard__group");
+
+    darkModeClasses(boxElements, scoreElements, shadowElements, darkMode);
   }, [darkMode]);
 
   const handleDarkModeToggle = () => {

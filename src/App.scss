@@ -24,9 +24,31 @@ body.bg-dark {
 // * button classes
 
 .light {
-  background: #fff;
+  background: #fff !important;
 }
 
 .dark {
+  background: #444 !important;
+}
+
+.no-shadow {
+  box-shadow: 0 0 0 transparent !important;
+  background: #444 !important;
+}
+
+.shadow {
+  box-shadow: 0 0 8px #888 !important;
+  background: white !important;
+}
+
+// * modal classes
+
+.modal-light {
+  background: white;
+  color: black;
+}
+
+.modal-dark {
   background: #444;
+  color: white;
 }
