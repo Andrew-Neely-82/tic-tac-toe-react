@@ -1,12 +1,12 @@
-import { Board, Box } from "./components/export";
+import { Board } from "./components/export";
 import "./App.scss";
+import { useState } from "react";
 
 function App() {
-  const board = ["X", "X", "X", "X", "X", "X", "X", "X", "X"];
+  const [board, setBoard] = useState(["X", "X", "X", "X", "X", "X", "X", "X", "X"]);
   return (
     <div className="App">
-      <Board board={board} />
-      <Box value="x" onClick={null} />
+      <Board board={board} onClick={null} />
     </div>
   );
 }
