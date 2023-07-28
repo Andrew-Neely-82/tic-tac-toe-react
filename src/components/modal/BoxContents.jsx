@@ -1,12 +1,10 @@
 import { Box, Button, Typography } from "@mui/material";
 import { style, descriptionStyle } from "./style";
+import React, { forwardRef } from "react";
 
-const BoxContents = (props) => {
+const BoxContents = forwardRef(({ onClick }, ref) => {
   return (
-    <Box sx={style}>
-      <Button className="close" variant="contained" onClick={props.handleClose} sx={{ mt: 2 }}>
-        X
-      </Button>
+    <Box ref={ref} sx={style}>
       <Typography id="modal-modal-title" variant="h5" component="h2" sx={{ py: 2, textAlign: "center" }}>
         <span>Tic Tac Toe</span>
       </Typography>
@@ -18,14 +16,17 @@ const BoxContents = (props) => {
       </Typography>
       <Typography id="modal-modal-description" sx={{ ...descriptionStyle, marginTop: 5 }}>
         <span>
-          <span className="underline">To Switch Player Color </span>
+          <span className="underline">To Switch Player Color</span>
           <br />
           select a square, <br />
           then select reset
         </span>
       </Typography>
+      <Button className="close" variant="contained" aria-label="close" onClick={onClick} sx={{ mt: 2 }}>
+        X
+      </Button>
     </Box>
   );
-};
+});
 
 export default BoxContents;
