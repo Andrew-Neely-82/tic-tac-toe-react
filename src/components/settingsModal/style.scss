@@ -1,0 +1,14 @@
+.close-settings {
+  position: absolute !important;
+  top: 0.25rem;
+  right: 0.25rem;
+  display: block !important;
+  min-width: fit-content !important;
+  background: red !important;
+  padding-block: 0.25rem !important;
+  padding-inline: 0.75rem !important;
+
+  &:focus {
+    outline: 2px solid black !important ;
+  }
+}

@@ -1,5 +1,5 @@
 import { updateScores, winnerCheck, resetTheBoard, playerSwitch } from "./index";
-import { Board, ResetButton, ScoreBoard } from "../export";
+import { Board, Controls, ScoreBoard } from "../export";
 import { useState } from "react";
 
 const Layout = () => {
@@ -31,7 +31,7 @@ const Layout = () => {
     <>
       <ScoreBoard scores={scores} xPlaying={xPlaying} onClick={switchPlayer} />
       <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
-      <ResetButton resetBoard={resetBoard} />
+      <Controls resetBoard={resetBoard} />
     </>
   );
 };

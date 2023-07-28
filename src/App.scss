@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -9,4 +9,24 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #efefef;
   margin: 0;
+}
+
+// * background classes
+
+body.bg-light {
+  background: #efefef;
+}
+
+body.bg-dark {
+  background: #111;
+}
+
+// * button classes
+
+.light {
+  background: #fff;
+}
+
+.dark {
+  background: #444;
 }
