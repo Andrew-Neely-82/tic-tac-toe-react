@@ -18,8 +18,7 @@ const BoxContents = forwardRef(({ onClick }, ref) => {
         <span>
           <span className="underline">To Switch Player Color</span>
           <br />
-          select a square, <br />
-          then select reset
+          select from the scoreboard <br />
         </span>
       </Typography>
       <Button className="close" variant="contained" aria-label="close" onClick={onClick} sx={{ mt: 2 }}>
