@@ -10,6 +10,10 @@
   box-shadow: 0 0 8px #888;
   margin: 3rem auto;
 
+  .inactive {
+    border-bottom: 5px solid transparent !important;
+  }
+
   .score {
     width: 100%;
     text-align: center;
@@ -30,7 +34,7 @@
     &-x,
     &-o {
       cursor: pointer;
-      
+
       &:hover {
         background: #efefef;
       }
