@@ -1,19 +1,13 @@
-import { backgroundChange, darkModeClasses } from "./index";
+import React, { useContext, useEffect } from 'react';
 import { Box, Button, Typography } from "@mui/material";
-import { forwardRef, useEffect, useState } from "react";
 import DarkModeToggle from "./DarkModeToggle";
+import { DarkModeContext } from "../../context/DarkModeContext"; // update the path according to your folder structure
+import { backgroundChange, darkModeClasses } from "./index";
 
-const SettingsModalBox = forwardRef(({ onClick }, ref) => {
-  const [darkMode, setDarkMode] = useState(() => {
-    // Get the initial darkMode value from localStorage if available
-    const storedDarkMode = localStorage.getItem("darkMode");
-    return storedDarkMode ? JSON.parse(storedDarkMode) : false;
-  });
+const SettingsModalBox = ({ onClick }) => {
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   useEffect(() => {
-    // Save the darkMode value to localStorage whenever it changes
-    localStorage.setItem("darkMode", JSON.stringify(darkMode));
-
     // Update the body class based on the darkMode value
     backgroundChange(darkMode);
 
@@ -55,6 +49,6 @@ const SettingsModalBox = forwardRef(({ onClick }, ref) => {
       </Button>
     </Box>
   );
-});
+};
 
 export default SettingsModalBox;
