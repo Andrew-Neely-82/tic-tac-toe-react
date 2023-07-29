@@ -29,6 +29,12 @@ body.bg-dark {
 
 .dark {
   background: #444 !important;
+
+  &.score:hover,
+  &.score:focus,
+  &.score:active {
+    background: #333 !important;
+  }
 }
 
 .no-shadow {
@@ -49,6 +55,6 @@ body.bg-dark {
 }
 
 .modal-dark {
-  background: #444;
+  background: #444 !important;
   color: white;
 }

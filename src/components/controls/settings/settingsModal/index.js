@@ -8,8 +8,8 @@ export const backgroundChange = (darkMode) => {
   }
 };
 
-export const darkModeClasses = (boxElements, scoreElements, shadowElements, darkMode) => {
-  if (boxElements && scoreElements && shadowElements) {
+export const darkModeClasses = (boxElements, scoreElements, shadowElements, modalElements, darkMode) => {
+  if (boxElements && scoreElements && shadowElements && modalElements) {
     boxElements.forEach((boxElement) => {
       if (darkMode) {
         boxElement.classList.add("dark");
@@ -37,6 +37,26 @@ export const darkModeClasses = (boxElements, scoreElements, shadowElements, dark
         shadowElement.classList.remove("no-shadow");
       }
     });
+    modalElements.forEach((modal) => {
+      if (darkMode) {
+        modal.classList.add("modal-dark");
+        modal.classList.remove("modal-light");
+      } else {
+        modal.classList.add("modal-light");
+        modal.classList.remove("modal-dark");
+      }
+    });
   }
 };
 
+export const styling = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};

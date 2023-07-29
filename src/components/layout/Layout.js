@@ -17,12 +17,17 @@ const Layout = () => {
       }
     });
 
+    
     const winner = checkWinner(updatedBoard);
     updateScores(winner, scores, setScores);
     setBoard(updatedBoard);
     setXPlaying(!xPlaying);
   };
-
+  
+  const clearScores = () => {
+    return setScores({ xScore: 0, oScore: 0 });
+  };
+  
   const checkWinner = winnerCheck(setGameOver);
   const resetBoard = resetTheBoard(setGameOver, setBoard);
   const switchPlayer = playerSwitch(xPlaying, setXPlaying);
@@ -31,7 +36,7 @@ const Layout = () => {
     <>
       <ScoreBoard scores={scores} xPlaying={xPlaying} onClick={switchPlayer} />
       <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
-      <Controls resetBoard={resetBoard} />
+      <Controls resetBoard={resetBoard} clearScores={clearScores}/>
     </>
   );
 };

@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from 'react';
+import { DarkModeContext } from "../../../../context/DarkModeContext";
+import { backgroundChange, darkModeClasses, styling } from "./index";
+import React, { forwardRef, useContext, useEffect } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import DarkModeToggle from "./DarkModeToggle";
-import { DarkModeContext } from "../../context/DarkModeContext"; // update the path according to your folder structure
-import { backgroundChange, darkModeClasses } from "./index";
 
-const SettingsModalBox = ({ onClick }) => {
+const SettingsModalBox = forwardRef(({ onClick }, ref) => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   useEffect(() => {
@@ -15,40 +15,31 @@ const SettingsModalBox = ({ onClick }) => {
     const boxElements = document.querySelectorAll(".box");
     const scoreElements = document.querySelectorAll(".score");
     const shadowElements = document.querySelectorAll(".ScoreBoard__group");
+    const modalElements = document.querySelectorAll(".MuiBox-root");
 
-    darkModeClasses(boxElements, scoreElements, shadowElements, darkMode);
+    darkModeClasses(boxElements, scoreElements, shadowElements, modalElements, darkMode);
   }, [darkMode]);
 
   const handleDarkModeToggle = () => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
   };
 
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
+  const style = styling;
 
   return (
     <Box sx={style}>
       <Typography id="modal-modal-title" variant="h6" component="h2">
-        Settings
+        <span>Settings</span>
       </Typography>
       <Typography id="modal-modal-description" sx={{ mt: 2, display: "flex", justifyContent: "space-between" }}>
-        Dark Mode
+        <span>Dark Mode</span>
         <DarkModeToggle checked={darkMode} onChange={handleDarkModeToggle} />
       </Typography>
       <Button className="close-settings" onClick={onClick}>
-        X
+        <span>X</span>
       </Button>
     </Box>
   );
-};
+});
 
 export default SettingsModalBox;

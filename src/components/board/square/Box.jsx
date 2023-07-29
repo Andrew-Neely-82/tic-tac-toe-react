@@ -1,4 +1,4 @@
-import { DarkModeContext } from "../../context/DarkModeContext";
+import { DarkModeContext } from "../../../context/DarkModeContext";
 import Button from "@mui/material/Button";
 import "./style.scss";
 import { useContext } from "react";

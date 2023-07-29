@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import SettingsModal from "./settingsModal/SettingsModal";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { Button, Tooltip } from "@mui/material";
-import SettingsModal from "../settingsModal/SettingsModal";
-import './style.scss'
+import React, { useState } from "react";
+import "./style.scss";
 
 const Settings = () => {
   const [open, setOpen] = useState(false);
