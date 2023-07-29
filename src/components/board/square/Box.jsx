@@ -1,7 +1,7 @@
 import { DarkModeContext } from "../../../context/DarkModeContext";
-import Button from "@mui/material/Button";
-import "./style.scss";
+import { Button } from "@mui/material";
 import { useContext } from "react";
+import "./style.scss";
 
 const Box = ({ value, onClick }) => {
   const { darkMode } = useContext(DarkModeContext);
@@ -15,4 +15,5 @@ const Box = ({ value, onClick }) => {
 
   return <Button {...props}>{value}</Button>;
 };
+
 export default Box;

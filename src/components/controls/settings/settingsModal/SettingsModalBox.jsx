@@ -28,14 +28,16 @@ const SettingsModalBox = forwardRef(({ onClick }, ref) => {
 
   return (
     <Box sx={style}>
-      <Typography id="modal-modal-title" variant="h6" component="h2">
+      <Typography id="modal-modal-title" aria-label="Settings" variant="h6" component="h2">
         <span>Settings</span>
       </Typography>
       <Typography id="modal-modal-description" sx={{ mt: 2, display: "flex", justifyContent: "space-between" }}>
         <span>Dark Mode</span>
-        <DarkModeToggle checked={darkMode} onChange={handleDarkModeToggle} />
+        <span aria-label="Dark Mode Toggle">
+          <DarkModeToggle checked={darkMode} onChange={handleDarkModeToggle} />
+        </span>
       </Typography>
-      <Button className="close-settings" onClick={onClick}>
+      <Button className="close-settings" aria-label="Close Settings" onClick={onClick}>
         <span>X</span>
       </Button>
     </Box>

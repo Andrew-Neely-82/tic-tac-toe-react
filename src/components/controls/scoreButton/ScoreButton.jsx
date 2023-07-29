@@ -1,6 +1,8 @@
 import EqualizerIcon from "@mui/icons-material/Equalizer";
+import { visuallyHidden } from "@mui/utils";
 import Button from "@mui/material/Button";
 import { Tooltip } from "@mui/material";
+import Box from "@mui/material/Box";
 import "./style.scss";
 
 const ScoreButton = ({ clearScores }) => {
@@ -19,8 +21,10 @@ const ScoreButton = ({ clearScores }) => {
     <Tooltip {...tooltipProps} arrow>
       <Button {...buttonProps}>
         <EqualizerIcon />
+        <Box sx={visuallyHidden}>Reset Scores</Box>
       </Button>
     </Tooltip>
   );
 };
+
 export default ScoreButton;
