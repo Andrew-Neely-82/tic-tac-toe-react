@@ -1,7 +1,7 @@
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import Button from "@mui/material/Button";
 import { Tooltip } from "@mui/material";
-import './style.scss'
+import "./style.scss";
 
 const ScoreButton = ({ clearScores }) => {
   const tooltipProps = {
@@ -16,7 +16,7 @@ const ScoreButton = ({ clearScores }) => {
   };
 
   return (
-    <Tooltip {...tooltipProps}>
+    <Tooltip {...tooltipProps} arrow>
       <Button {...buttonProps}>
         <EqualizerIcon />
       </Button>
