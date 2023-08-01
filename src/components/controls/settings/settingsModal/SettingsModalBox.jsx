@@ -5,7 +5,7 @@ import { Box, Button, Typography } from "@mui/material";
 import DarkModeToggle from "./DarkModeToggle";
 import AboutModal from "./AboutModal";
 
-const SettingsModalBox = forwardRef(({ onClick, open }, ref) => {
+const SettingsModalBox = forwardRef(({ onClick }, ref) => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const SettingsModalBox = forwardRef(({ onClick, open }, ref) => {
         <span>About</span>
         <AboutModal />
       </Typography>
-      <Button className="close-settings" aria-label="Close Settings" onClick={onClick}>
+      <Button className="close-settings modal-button" aria-label="Close Settings" onClick={onClick}>
         <span>X</span>
       </Button>
     </Box>

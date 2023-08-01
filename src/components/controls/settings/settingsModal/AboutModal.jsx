@@ -3,23 +3,16 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import { styling } from ".";
+import { DarkModeContext } from "../../../../context/DarkModeContext";
 
 const AboutModal = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const { darkMode } = React.useContext(DarkModeContext);
 
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
+  const className = darkMode ? "modal-dark" : "modal-light";
 
   return (
     <>
@@ -27,7 +20,7 @@ const AboutModal = () => {
         <span>open</span>
       </Button>
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-        <Box sx={style}>
+        <Box className={className} sx={styling}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <span>About</span>
           </Typography>
@@ -36,19 +29,19 @@ const AboutModal = () => {
             <span>Andrew Neely</span>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2, display: "flex", justifyContent: "space-between", alignContent: "center" }}>
-            <span>Made in</span>
-            <span>React.js</span>
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2, display: "flex", justifyContent: "space-between", alignContent: "center" }}>
             <span>Version</span>
             <span>1.0</span>
           </Typography>
-          <Button variant="contained" aria-label="Close About" className="close-settings" onClick={handleClose}>
-            X
+          <Typography id="modal-modal-description" sx={{ mt: 2, display: "flex", justifyContent: "space-between", alignContent: "center" }}>
+            <span>Made in React.js with Mui components</span>
+          </Typography>
+          <Button className="close-settings modal-button" variant="contained" aria-label="Close About" onClick={handleClose}>
+            <span>X</span>
           </Button>
         </Box>
       </Modal>
     </>
   );
 };
+
 export default AboutModal;

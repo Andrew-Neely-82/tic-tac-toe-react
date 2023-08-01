@@ -21,7 +21,7 @@ const BoxContents = forwardRef(({ onClick }, ref) => {
           select from the scoreboard <br />
         </span>
       </Typography>
-      <Button className="close" variant="contained" aria-label="close" onClick={onClick} sx={{ mt: 2 }}>
+      <Button className="close modal-button" variant="contained" aria-label="close" onClick={onClick} sx={{ mt: 2 }}>
         X
       </Button>
     </Box>

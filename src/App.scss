@@ -58,3 +58,11 @@ body.bg-dark {
   background: #444 !important;
   color: white;
 }
+
+.modal-button {
+  transition: 250ms ease !important;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
