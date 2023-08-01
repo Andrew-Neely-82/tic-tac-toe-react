@@ -7,7 +7,7 @@ const SettingsModal = ({ open, handleClose }) => {
   return (
     <div>
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-        <SettingsModalBox onClick={handleClose} />
+        <SettingsModalBox open={open} onClick={handleClose} />
       </Modal>
     </div>
   );

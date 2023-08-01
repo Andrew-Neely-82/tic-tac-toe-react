@@ -3,8 +3,9 @@ import { backgroundChange, darkModeClasses, styling } from "./index";
 import React, { forwardRef, useContext, useEffect } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import DarkModeToggle from "./DarkModeToggle";
+import AboutModal from "./AboutModal";
 
-const SettingsModalBox = forwardRef(({ onClick }, ref) => {
+const SettingsModalBox = forwardRef(({ onClick, open }, ref) => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   useEffect(() => {
@@ -31,11 +32,15 @@ const SettingsModalBox = forwardRef(({ onClick }, ref) => {
       <Typography id="modal-modal-title" aria-label="Settings" variant="h6" component="h2">
         <span>Settings</span>
       </Typography>
-      <Typography id="modal-modal-description" sx={{ mt: 2, display: "flex", justifyContent: "space-between" }}>
+      <Typography id="modal-modal-description" sx={{ mt: 2, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <span>Dark Mode</span>
         <span aria-label="Dark Mode Toggle">
           <DarkModeToggle checked={darkMode} onChange={handleDarkModeToggle} />
         </span>
+      </Typography>
+      <Typography id="modal-modal-description" sx={{ mt: 2, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <span>About</span>
+        <AboutModal />
       </Typography>
       <Button className="close-settings" aria-label="Close Settings" onClick={onClick}>
         <span>X</span>
